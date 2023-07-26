@@ -5,6 +5,9 @@ import { Provider } from 'react-redux';
 import store from './redux/store';
 import { Auth0Provider } from '@auth0/auth0-react';
 import { auth0Config } from './config/auth0.config';
+import Characters from './components/Characters/Characters';
+import Marvel from './components/Characters/Marvel';
+
 
 function App() {
   return (
@@ -19,6 +22,8 @@ function App() {
         <Navbar />
         <Provider store={store}>
           <Routes>
+            <Route path='/'element={<Characters />}/>
+            <Route path='/:id' element={<Marvel />}>
             { routes.map((route: any, index: any) => (
               <Route
                 key={index}

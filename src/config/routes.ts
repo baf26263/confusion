@@ -5,10 +5,11 @@ import Heroes from '../pages/Heroes';
 // import { ReactNode } from 'react'; // Import ReactNode type
 
 interface RouteType {
-  path: string;
-  component: React.FC; // Use React.FC here
-  name: string;
+  path: string,
+  component: () => JSX.Element,
+  name: string
 }
+
 
 const routes: RouteType[] = [
   {
